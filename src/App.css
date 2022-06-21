@@ -1,6 +1,7 @@
 .layout {
   background-color: #282c34;
   height: 1800px;
+  flex-direction: row;
 }
 
 .App {

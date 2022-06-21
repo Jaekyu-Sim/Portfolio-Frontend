@@ -6,16 +6,16 @@ const {Header, Footer, Sider, Content} = Layout;
 
 const Main = () => {
     return (
-            <Layout className="layout">
-                <Sider style={{width:"200px", background:"#ffff00"}}>
-                    Sider
-                </Sider> 
-                <Layout>
-                    <Header>Header</Header>
-                    <Content style={{minHeight:"200px"}}>Content</Content>
-                    <Footer>Footer</Footer>
-                </Layout>   
-            </Layout>
+        <Layout style={{flexDirection:"row", backgroundColor:"#ff0000"}}>
+            <Sider style={{width:"200px", background:"#ffff00"}}>
+                Sider
+            </Sider> 
+            <Layout>
+                <Header>Header</Header>
+                <Content style={{minHeight:"200px"}}>Content</Content>
+                <Footer>Footer</Footer>
+            </Layout>   
+        </Layout>
     )
 }
 
