@@ -1,5 +1,5 @@
 import React from "react";
-import {Row, Col} from "antd" ;
+import {Row, Col, Typography} from "antd" ;
 import '../App.css';
 
 /*
@@ -10,12 +10,26 @@ position: fixed;
   width: 100%;
   background-color: skyblue;
 
+
+  position : relative;
+  transform : translateY(-100%);
 */
 
 const Footer = () => {
     return (
-        <div style={{height: "50px", width : "100%", backgroundColor:"tomato", minHeight:"50px"}}>
-            Footer
+        <div style={{position: "relative", bottom: 0, height: "200px", width : "100%", backgroundColor:"#DDDDDD", minHeight:"50px", flexDirection:"row", padding:"10px"}}>
+
+                <Typography.Title level={1} style={{width:"30%"}}>
+                    Contact
+                </Typography.Title>
+
+
+                <Typography.Title level={3} style={{width:"70%"}}>
+                Test
+                </Typography.Title>
+                
+
+
         </div>
     )
 }
