@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Row, Col, Card, Divider, Typography, Tag} from "antd" ;
+import {Row, Col, Divider, Typography, Tag} from "antd" ;
 import { createFromIconfontCN } from '@ant-design/icons';
 import '../App.css';
 import developerImg1 from '../img/개발자1.png'
@@ -7,7 +7,13 @@ import developerImg2 from '../img/개발자2.png'
 import developerImg3 from '../img/개발자3.png'
 import developerImg4 from '../img/개발자4.png'
 import developerImg5 from '../img/개발자심재규입니다.png'
-import title from '../img/Title.png'
+import githubIcon from '../img/githubIcon.png';
+import title from '../img/Title.png';
+import ButtonMui from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
 
 //import Divider from '@mui/material/Divider';
 
@@ -88,19 +94,53 @@ const Content = () => {
                     
             
             <Divider>기술 스택 - Github</Divider>
-            <Row>
-                <Col span={5}>
+            <Row style={{alignItems:"center", display:"contents", justifyContent:"center"}}>
+                <Typography.Title level={4} style={{alignItems:"center", display:"contents", justifyContent:"center"}}>
+                    React
+                </Typography.Title>
+            </Row>
+            <Row gutter={16}>
+                <Col span={4}>
+                    <Card sx={{ maxWidth: 345 }}>
+                        <CardMedia
+                            component="img"
+                            width="10%"
+                            image={githubIcon}
+                            alt="github"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div">
+                                React Chat Program
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                            리액트 기반의 소켓 채팅프로그램
+                            </Typography>
+                        </CardContent>
+                        <CardActions>
+                            <ButtonMui size="small" onClick={() => window.open("https://github.com/Jaekyu-Sim/reactMessenger", '_blank')} >Explore</ButtonMui>
+                        </CardActions>
+                    </Card>
                 </Col>
                 <Col span={4}>
-                    <Typography.Title level={4}>
-                        React
-                    </Typography.Title>
-                </Col>
-            </Row>
-            <Row>
-                <Col span={6}></Col>
-                <Col span={10}>
-                    Test
+                    <Card sx={{ maxWidth: 345 }}>
+                        <CardMedia
+                            component="img"
+                            width="10%"
+                            image={githubIcon}
+                            alt="github"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div">
+                                React Chat Program
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                            리액트 기반의 소켓 채팅프로그램
+                            </Typography>
+                        </CardContent>
+                        <CardActions>
+                            <ButtonMui size="small" onClick={() => window.open("https://github.com/Jaekyu-Sim/reactMessenger", '_blank')} >Explore</ButtonMui>
+                        </CardActions>
+                    </Card>
                 </Col>
             </Row>
             <p>
