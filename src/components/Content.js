@@ -1,6 +1,15 @@
-import React from "react";
-import {Row, Col} from "antd" ;
+import React, {useState} from "react";
+import {Row, Col, Card, Divider, Typography, Tag} from "antd" ;
+import { createFromIconfontCN } from '@ant-design/icons';
 import '../App.css';
+import developerImg1 from '../img/개발자1.png'
+import developerImg2 from '../img/개발자2.png'
+import developerImg3 from '../img/개발자3.png'
+import developerImg4 from '../img/개발자4.png'
+import developerImg5 from '../img/개발자심재규입니다.png'
+import title from '../img/Title.png'
+
+//import Divider from '@mui/material/Divider';
 
 /*
 position: fixed;
@@ -16,10 +25,113 @@ position: fixed;
 */
 
 const Content = () => {
+
+    //Variables
+
+    //States
+    const [cardLoading, setCardLoading] = useState(false);
+
+
+
     return (
-        <div style={{position: "relative",  height: "100%", width : "100%", backgroundColor:"white", minHeight:"50px", flex:"1"}}>
-            Content
+        <>
+        <div style={{position: "relative",  height: "100%", width : "100%", minHeight:"50px", flex:"1"}}>
+
+            <Row>
+                <Col span={14} style={{display:"flex", alignItems:"center", justifyContent:"center"}} >
+                    <div style={{display:"flex", alignItems:"center", justifyContent:"right"}}>
+                        {/* <h1 style={{alignItems:"center", justifyContent:"center", display:"flex"}}>개발자 <strong>심재규</strong> 입니다.</h1> */}
+                        { <img style={{width:"70%"}} alt="IsDevelperText" src = {title}></img>}
+                    </div>
+                </Col>
+                <Col span={7} style={{display:"flex", alignItems:"center", justifyContent:"center"}}>
+                    <img style={{width:"70%"}} alt="developer2" src = {developerImg4}/>
+                </Col>
+                <Col span={3}></Col>
+            </Row>
+            <Row style={{alignItems:"center", display:"flex", justifyContent:"center"}}>
+                <Divider>
+                    SUMMARY
+                </Divider>
+                <Typography.Text style={{whiteSpace:"pre-wrap"}}>
+                    안녕하세요, 개발자 심재규 입니다. 계속해서 새로 배우는것을 즐기고, 끊임없이 개발 능력의 한계를 찾고, 이를 극복하는 활동을 해오고 있습니다. <br/>
+                    석사과정에서 AI 기반의 Pose Estimation을 연구하고, 현재는 Web 개발(React & Springboot) 업무를 수행하며 역량을 가다듬고 있습니다. <br/>
+                    낯선분야에서의 시작을 두려워 하지 않고, 문제를 빠르게 정의하고 해결하는 개발자가 되도록 노력하고있습니다.
+                </Typography.Text>
+            </Row>
+
+            <Row style={{alignItems:"center", display:"contents", justifyContent:"center"}}>
+                <Divider>Tech Stack</Divider>
+                <p style={{justifyContent:"center", alignItems:"center", display:"flex"}}>
+                    <Tag color={"blue"}>React</Tag>
+                    <Tag color={"yellow"}>Javascript</Tag>
+                </p>
+                <p style={{justifyContent:"center", alignItems:"center", display:"flex"}}>
+                    <Tag color={"green"}>Springboot</Tag>
+                    <Tag color={"cyan"}>Java</Tag>
+                </p>
+                <p style={{justifyContent:"center", alignItems:"center", display:"flex"}}>
+                    <Tag color={"orange"}>Tensorflow</Tag>
+                    <Tag color={"blue"}>Python</Tag>
+                </p>
+                <p style={{justifyContent:"center", alignItems:"center", display:"flex"}}>
+                    <Tag color={"pink"}>AI</Tag>
+                    <Tag color={"geekblue"}>Computer Vision</Tag>
+                    <Tag color={"lime"}>Human Pose Estimation</Tag>
+                </p>
+                <p style={{justifyContent:"center", alignItems:"center", display:"flex"}}>
+                    <Tag color={"magenta"}>SQL</Tag>
+                    <Tag color={"volcano"}>Oracle</Tag>
+                    <Tag color={"purple"}>MySQL</Tag>
+                </p>
+            </Row>
+                    
+            
+            <Divider>기술 스택 - Github</Divider>
+            <Row>
+                <Col span={5}>
+                </Col>
+                <Col span={4}>
+                    <Typography.Title level={4}>
+                        React
+                    </Typography.Title>
+                </Col>
+            </Row>
+            <Row>
+                <Col span={6}></Col>
+                <Col span={10}>
+                    Test
+                </Col>
+            </Row>
+            <p>
+                AI
+
+                Springboot msa
+                
+                REACT
+            </p>
+            
+            
+
+            <Card title = "프로젝트">
+
+            <p>
+                사용자 모션 인식 로보메이션
+
+                SK Hynix M16
+
+                SK Hynix R3
+
+                SK Hynix M15
+            </p>
+            </Card>
+
+            
+            
+
+
         </div>
+        </>
     )
 }
 

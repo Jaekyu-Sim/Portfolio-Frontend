@@ -7,7 +7,7 @@ import Content from "../components/Content";
 //import {Header} from "../components/Header";
 
 //import {Header} from "../components/Header";
-//import '../App.css';
+import '../App.css';
 /*
 height: 100%;
         display: flex;
