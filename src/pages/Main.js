@@ -20,8 +20,8 @@ height: 100%;
 
 const Main = () => {
     return (
-        <div style={{height:"3000px", display:"flex", flexFlow:"column"}}>
-            <Header></Header>
+        <div style={{display:"flex", flexFlow:"column"}}>
+            {/* <Header></Header> */}
             <Content></Content>
             <Footer></Footer>
         </div>
