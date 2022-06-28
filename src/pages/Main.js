@@ -4,6 +4,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Content from "../components/Content";
 
+import "./Main.css"
+
 //import {Header} from "../components/Header";
 
 //import {Header} from "../components/Header";
@@ -21,7 +23,7 @@ height: 100%;
 const Main = () => {
     return (
         <div style={{display:"flex", flexFlow:"column"}}>
-            {/* <Header></Header> */}
+            <Header></Header>
             <Content></Content>
             <Footer></Footer>
         </div>

@@ -7,25 +7,6 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-.pape {
-    width: 20%;
-    height: 50px;
-    background: #fff;
-    box-shadow:
-   /* The top layer shadow */
-   0 1px 1px rgba(0,0,0,0.15),
-   /* The second layer */
-   0 10px 0 -5px #eee,
-   /* The second layer shadow */
-   0 10px 1px -4px rgba(0,0,0,0.15),
-    /* The third layer */
-   0 20px 0 -10px #eee,
-   /* The third layer shadow */
-   0 20px 1px -9px rgba(0,0,0,0.15);
-   /* Padding for demo purposes */
-   padding: 5px;
-   
-  }
 .paper-img {
     position: absolute;
     width: 50%;
@@ -40,6 +21,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 1;
 }
 
 .paper-img:before {
@@ -62,7 +44,7 @@ body {
 
 .paper {
     position: relative;
-    width: 70%;
+    width: 90%;
     max-width: 90%;
     min-width: 400px;
     height: 480px;
@@ -100,14 +82,13 @@ body {
     border: 0;
     outline: 0;
     background: transparent;
-    color: #000000;
-    font-family: 'ParkYongJun', cursive;
+    color: mediumblue;
+    font-family: 'Handlee', cursive;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 18px;
     box-sizing: border-box;
     z-index: 1;
 }
-
 
 footer {
     margin-top: 30px;

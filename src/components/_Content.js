@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {Row, Col, Divider, Typography, Tag} from "antd" ;
 import Carousel from 'react-material-ui-carousel'
 import { createFromIconfontCN } from '@ant-design/icons';
@@ -52,68 +52,46 @@ const Content = () => {
 
     //Variables
 
-    let size = {
-        width: window.innerWidth || document.body.clientWidth,
-        height: window.innerHeight || document.body.clientHeight 
-      };
-
-    
-
     //States
     const [cardLoading, setCardLoading] = useState(false);
-    const [browserWidth, setBrowserWidth] = useState(window.innerWidth);
-    const [browserHeight, setBrowserHeight] = useState(window.innerHeight);
 
-    //func
-    const handleBrowserResize = () => {
-        console.log("브라우저 크기 바뀜", window.innerHeight, window.innerWidth);
-        setBrowserHeight(window.innerHeight);
-        setBrowserWidth(window.innerWidth);
-    }
 
-    //useEffect
-    useEffect(()=>{
-        console.log('가로 값이 바뀜', window.innerWidth)
-      }, [window.innerWidth]);
-    
-    useEffect(()=>{
-    console.log('세로 값이 바뀜', window.innerHeight)
-    }, [window.innerHeight]);
-
-    useEffect(() => {
-        window.addEventListener("resize", handleBrowserResize);
-        return () => {
-            window.removeEventListener("resize", handleBrowserResize);
-        }
-    }, []);
 
     return (
         <>
-        <div style={{background:"#91D1D3", position: "relative",  height: "100%", width:browserWidth, minHeight:"50px", flex:"1"}}>
-            <div style={{paddingLeft:"5%", paddingBottom:"20px"}}>
-                <div className="pape" style={{fontFamily:"ParkYongJun", fontSize:"30px"}}>
-
-                    1. Introduction
-
-                </div>
+        <div style={{position: "relative",  height: "100%", width : "100%", minHeight:"50px", flex:"1"}}>
+            <div style={{alignItems:"center", justifyContent:"center"}}>
+                <Carousel autoplay >
+                    <div className="CarouselStyle">
+                        <img style={{height:"500px"}} alt="TopImg1" src={CarouselImg1}></img>
+                    </div>
+                    <div className="CarouselStyle">
+                        <img style={{height:"500px"}} alt="TopImg3" src={CarouselImg2}></img>
+                    </div>
+                    {/* <div className="CarouselStyle">
+                        <img style={{height:"500px"}} alt="TopImg2" src={myPic2}></img>
+                    </div> */}
+                </Carousel>
             </div>
-            <div className="paper">
-                <div class="paper-content">
-                    <textarea>
-                        안녕하세요, 개발자 심재규 입니다.&#10;
-                        계속해서 새로 배우는것을 즐기고, 끊임없이 개발 능력의 한계를 찾고, 이를 극복하는 활동을 해오고 있습니다.&#10;
-                        석사과정에서 AI 기반의 Pose Estimation을 연구하고, 현재는 Web 개발(React & Springboot) 업무를 수행하며 역량을 가다듬고 있습니다.&#10;
-                        낯선분야에서의 시작을 두려워 하지 않고, 문제를 빠르게 정의하고 해결하는 개발자가 되도록 노력하고있습니다.&#10;
-                    </textarea>
-
-                </div>
-            </div>
+            {/* <Row>
+                <Col span={14} style={{display:"flex", alignItems:"center", justifyContent:"center"}} >
+                    <div style={{display:"flex", alignItems:"center", justifyContent:"right"}}>
+                        { <img style={{width:"70%"}} alt="IsDevelperText" src = {title}></img>}
+                    </div>
+                </Col>
+                <Col span={7} style={{display:"flex", alignItems:"center", justifyContent:"center"}}>
+                    <img style={{width:"70%"}} alt="developer2" src = {developerImg4}/>
+                </Col>
+                <Col span={3}></Col>
+            </Row> */}
             <Row style={{alignItems:"center", display:"flex", justifyContent:"center"}}>
                 <Divider>
                     SUMMARY
                 </Divider>
                 <Typography.Text style={{whiteSpace:"pre-wrap"}}>
-                    
+                    안녕하세요, 개발자 심재규 입니다. 계속해서 새로 배우는것을 즐기고, 끊임없이 개발 능력의 한계를 찾고, 이를 극복하는 활동을 해오고 있습니다. <br/>
+                    석사과정에서 AI 기반의 Pose Estimation을 연구하고, 현재는 Web 개발(React & Springboot) 업무를 수행하며 역량을 가다듬고 있습니다. <br/>
+                    낯선분야에서의 시작을 두려워 하지 않고, 문제를 빠르게 정의하고 해결하는 개발자가 되도록 노력하고있습니다.
                 </Typography.Text>
             </Row>
 
