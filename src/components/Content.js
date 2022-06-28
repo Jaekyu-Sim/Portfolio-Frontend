@@ -35,6 +35,9 @@ import githubResult1 from '../img/githubResult1.png'
 
 import "../components/Content.css"
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 //import Divider from '@mui/material/Divider';
 
 /*
@@ -53,7 +56,7 @@ position: fixed;
 const Content = () => {
 
     //Variables
-
+    AOS.init();
 
     let size = {
         width: window.innerWidth || document.body.clientWidth,
@@ -162,16 +165,16 @@ const Content = () => {
             <Chip label="Pose Estimation" color="primary"></Chip> */}
             </div>
             <div style={{display:"flex"}}>
-                <div style={{paddingLeft:"17.5%", paddingBottom:"20px", paddingTop:"55px", position:"absolute", zIndex:"2"}}>
+                <div data-aos="flip-right" style={{paddingLeft:"17.5%", paddingBottom:"20px", paddingTop:"55px", position:"absolute", zIndex:"2"}}>
                     <div className="papeTag" style={{fontFamily:"ParkYongJun", fontSize:"30px", alignItems:"center", justifyContent:"center", display:"flex", width:"100%"}}>
 
                         Frontend
 
                     </div>
                 </div>
-                <div className="sticker" style={{zIndex:"1", left: "0%", transform: "translate(10%, 10%)"}}>
-                    <div class="sticker-content">
-                        <div style={{height:"fit-content"}}>
+                <div  className="sticker" style={{zIndex:"1", left: "0%", transform: "translate(10%, 10%)"}} >
+                    <div data-aos="flip-right" class="sticker-content">
+                        <div data-aos="flip-right" style={{height:"fit-content"}}>
                             <br></br>React <br></br>
                             <ul>
                                 <li style={{fontSize:"20px"}}>
@@ -196,16 +199,16 @@ const Content = () => {
                         </div>
                     </div>
                 </div>              
-                <div style={{paddingLeft:"60.5%", paddingBottom:"20px", paddingTop:"55px", position:"absolute", zIndex:"2"}}>
+                <div  data-aos="flip-left" style={{paddingLeft:"60.5%", paddingBottom:"20px", paddingTop:"55px", position:"absolute", zIndex:"2"}}>
                     <div className="papeTag" style={{fontFamily:"ParkYongJun", fontSize:"30px", alignItems:"center", justifyContent:"center", display:"flex", width:"100%"}}>
 
                         Backend
 
                     </div>
                 </div>
-                <div className="sticker" style={{zIndex:"1", left: "-7%", transform: "translate(10%, 10%)"}}>
-                    <div class="sticker-content">
-                        <div style={{height:"fit-content"}}>
+                <div  className="sticker" style={{zIndex:"1", left: "-7%", transform: "translate(10%, 10%)"}}>
+                    <div data-aos="flip-left" class="sticker-content">
+                        <div data-aos="flip-left" style={{height:"fit-content"}}>
                             <br></br>Springboot <br></br>
                             <ul>
                                 <li style={{fontSize:"20px"}}>
@@ -232,7 +235,7 @@ const Content = () => {
                 </div>
             </div>
 
-            <div style={{display:"flex", paddingTop:"30px", justifyContent:"center", display:"flex"}}>
+            <div data-aos="flip-up" style={{display:"flex", paddingTop:"30px", justifyContent:"center", display:"flex"}}>
                 <div style={{paddingBottom:"20px", paddingTop:"55px", paddingRight:"8%",position:"absolute", zIndex:"2"}}>
                     <div className="papeTag" style={{fontFamily:"ParkYongJun", fontSize:"30px",width:"100%"}}>
 
@@ -261,7 +264,17 @@ const Content = () => {
                 </div> 
             </div>
 
-            
+            <div style={{paddingLeft:"5%", paddingBottom:"20px", paddingTop:"50px"}}>
+                <div className="pape" style={{fontFamily:"ParkYongJun", fontSize:"30px"}}>
+
+                    3. Career
+
+                </div>
+            </div>
+            <div style={{background:"white"}}>
+                Spatial_Transform_Network
+                
+            </div>
             
             
             <Divider>기술 스택 - Github</Divider>
