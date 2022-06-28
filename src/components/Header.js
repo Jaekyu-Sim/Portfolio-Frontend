@@ -66,8 +66,17 @@ const Header = () => {
                     심재규 입니다
                 </div>
 
-                <div className="paper-img" style={{zIndex:"1"}}>
-                    <div className="paper-img-content"></div>
+                <div className="paper-header" >
+                    <div class="paper-content">
+                        <div style={{color:"#686561"}}>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                            오늘의 공부<br></br>
+                            1. Programming Skill Up<br></br>
+                            2. 업무 Logic 분석 및 개발
+                        </div>
+                    </div>
                 </div>
             </div>
     )

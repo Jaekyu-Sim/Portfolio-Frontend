@@ -8,7 +8,8 @@ import developerImg2 from '../img/개발자2.png'
 import developerImg3 from '../img/개발자3.png'
 import developerImg4 from '../img/개발자4.png'
 import developerImg5 from '../img/개발자심재규입니다.png'
-import githubIcon from '../img/githubIcon.png';
+//import githubIcon from '../img/githubIcon.png';
+import githubIcon from '../img/githubIcon.svg'
 import title from '../img/Title.png';
 
 import title2 from '../img/Title2.PNG';
@@ -28,6 +29,7 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
+import Chip from '@mui/material/Chip';
 
 import githubResult1 from '../img/githubResult1.png'
 
@@ -51,6 +53,7 @@ position: fixed;
 const Content = () => {
 
     //Variables
+
 
     let size = {
         width: window.innerWidth || document.body.clientWidth,
@@ -99,49 +102,166 @@ const Content = () => {
             </div>
             <div className="paper">
                 <div class="paper-content">
-                    <textarea>
-                        안녕하세요, 개발자 심재규 입니다.&#10;
-                        계속해서 새로 배우는것을 즐기고, 끊임없이 개발 능력의 한계를 찾고, 이를 극복하는 활동을 해오고 있습니다.&#10;
-                        석사과정에서 AI 기반의 Pose Estimation을 연구하고, 현재는 Web 개발(React & Springboot) 업무를 수행하며 역량을 가다듬고 있습니다.&#10;
-                        낯선분야에서의 시작을 두려워 하지 않고, 문제를 빠르게 정의하고 해결하는 개발자가 되도록 노력하고있습니다.&#10;
-                    </textarea>
+                    <div style={{height:"fit-content"}}>
+                        안녕하세요, 깊이있게 실력을 키우고자 하는 개발자 <span style={{color:"blue"}}>심재규</span> 입니다.<br></br>
+                        낯선 분야로의 도전을 두려워 하지 않고, 꾸준히 역량향상을 하며 개발 영역을 서서히 넓히고 있습니다.<br></br><br></br>
+                        <span style={{color:"blue", justifyContent:"center", alignItems:"center"}}>"현실에 안주하지 말자"</span><br></br><br></br>
+                        제가 가장 추구하고있는 인생모토입니다. 이 말을 모토로 업무에 임하며, 타협없이 일하고 꾸준히 역량 향상을 추구해오고 있습니다.<br></br>
+                        또한, 낯선분야에서의 시작을 두려워 하지 않고, 문제를 빠르게 정의하고 해결하는 개발자가 되도록 노력하고있습니다.<br></br><br></br>
+                    </div>
+                    <div style={{}}>
+                        Contact
+                        <ul>
+                            <li>
+                                Github : 
+                                <a href="https://github.com/JAEKYU-SIM">
+                                    {/* <img style={{width:"2%"}} src={githubIcon}></img>*/}
+                                    https://github.com/JAEKYU-SIM
+                                </a>
+                            </li>
+                        
+                            <br></br>
+                            <li>
+                                Blog : 
+                                <a href="https://blog.naver.com/worb1605">
+                                    {/* <img style={{width:"2%"}} src={githubIcon}></img>*/}
+                                    https://blog.naver.com/worb1605
+                                </a>
+                            </li>
+                            <br></br>
+                            <li>
+                                Mail : worb1605@naver.com
+                            </li>
+                            {/* <img style={{width:"2%"}} src={githubIcon}></img>*/}
+                        </ul>
+                    </div>
+
 
                 </div>
             </div>
-            <Row style={{alignItems:"center", display:"flex", justifyContent:"center"}}>
-                <Divider>
-                    SUMMARY
-                </Divider>
-                <Typography.Text style={{whiteSpace:"pre-wrap"}}>
-                    
-                </Typography.Text>
-            </Row>
 
-            <Row style={{alignItems:"center", display:"contents", justifyContent:"center"}}>
-                <Divider>Tech Stack</Divider>
-                <p style={{justifyContent:"center", alignItems:"center", display:"flex"}}>
-                    <Tag color={"blue"}>React</Tag>
-                    <Tag color={"yellow"}>Javascript</Tag>
-                </p>
-                <p style={{justifyContent:"center", alignItems:"center", display:"flex"}}>
-                    <Tag color={"green"}>Springboot</Tag>
-                    <Tag color={"cyan"}>Java</Tag>
-                </p>
-                <p style={{justifyContent:"center", alignItems:"center", display:"flex"}}>
-                    <Tag color={"orange"}>Tensorflow</Tag>
-                    <Tag color={"blue"}>Python</Tag>
-                </p>
-                <p style={{justifyContent:"center", alignItems:"center", display:"flex"}}>
-                    <Tag color={"pink"}>AI</Tag>
-                    <Tag color={"geekblue"}>Computer Vision</Tag>
-                    <Tag color={"lime"}>Human Pose Estimation</Tag>
-                </p>
-                <p style={{justifyContent:"center", alignItems:"center", display:"flex"}}>
-                    <Tag color={"magenta"}>SQL</Tag>
-                    <Tag color={"volcano"}>Oracle</Tag>
-                    <Tag color={"purple"}>MySQL</Tag>
-                </p>
-            </Row>
+            <div style={{paddingLeft:"5%", paddingBottom:"20px", paddingTop:"50px"}}>
+                <div className="pape" style={{fontFamily:"ParkYongJun", fontSize:"30px"}}>
+
+                    2. Tech Stack
+
+                </div>
+            </div>
+            <div style={{fontFamily:"ParkYongJun", fontSize:"30px", alignItems:"center", justifyContent:"center", display:"flex"}} >
+            Language : Javascript / Java / Oracle SQL / Python<br></br>
+            Framework/Library : React / Vue / Springboot / Tensorflow<br></br>
+            Domain : 반도체, AI, Computer Vision
+            {/* <Chip label="React" color="primary"></Chip>
+            <Chip label="Javascript" color="secondary"></Chip>
+            <Chip label="Springboot" color="primary"></Chip>
+            <Chip label="Java" color="primary"></Chip>
+            <Chip label="Tensorflow" color="primary"></Chip>
+            <Chip label="Python" color="primary"></Chip>
+            <Chip label="AI" color="primary"></Chip>
+            <Chip label="Compurter Vision" color="primary"></Chip>
+            <Chip label="Pose Estimation" color="primary"></Chip> */}
+            </div>
+            <div style={{display:"flex"}}>
+                <div style={{paddingLeft:"17.5%", paddingBottom:"20px", paddingTop:"55px", position:"absolute", zIndex:"2"}}>
+                    <div className="papeTag" style={{fontFamily:"ParkYongJun", fontSize:"30px", alignItems:"center", justifyContent:"center", display:"flex", width:"100%"}}>
+
+                        Frontend
+
+                    </div>
+                </div>
+                <div className="sticker" style={{zIndex:"1", left: "0%", transform: "translate(10%, 10%)"}}>
+                    <div class="sticker-content">
+                        <div style={{height:"fit-content"}}>
+                            <br></br>React <br></br>
+                            <ul>
+                                <li style={{fontSize:"20px"}}>
+                                    Redux, Saga 패턴을 적용한 상태관리 라이브러리를 사용한 경험이 있습니다.
+                                </li>
+                                <li style={{fontSize:"20px"}}>
+                                    Antd, Ag-grid, MUI 등의 라이브러리를 사용하여 시스템 개발을 한 경험이 있습니다.
+                                </li>
+                                <li style={{fontSize:"20px"}}>
+                                    실시간 가상 반도체장비 모니터링 시스템 UI 구축 경험이 있습니다.
+                                </li>
+                            </ul>
+                            <br></br>CSS<br></br>
+                            <ul>
+                                <li style={{fontSize:"20px"}}>
+                                    CSS 파일을 통하여 UI Component들의 Style 값을 관리할 수 있습니다.
+                                </li>
+                                <li style={{fontSize:"20px"}}>
+                                    CSS 문법에 익숙합니다.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>              
+                <div style={{paddingLeft:"60.5%", paddingBottom:"20px", paddingTop:"55px", position:"absolute", zIndex:"2"}}>
+                    <div className="papeTag" style={{fontFamily:"ParkYongJun", fontSize:"30px", alignItems:"center", justifyContent:"center", display:"flex", width:"100%"}}>
+
+                        Backend
+
+                    </div>
+                </div>
+                <div className="sticker" style={{zIndex:"1", left: "-7%", transform: "translate(10%, 10%)"}}>
+                    <div class="sticker-content">
+                        <div style={{height:"fit-content"}}>
+                            <br></br>Springboot <br></br>
+                            <ul>
+                                <li style={{fontSize:"20px"}}>
+                                    Springboot를 활용한 REST API 구축을 할 수 있습니다.
+                                </li>
+                                <li style={{fontSize:"20px"}}>
+                                    F/E 의 API 호출에 따른 내부 Core Logic을 구현할 수 있습니다.
+                                </li>
+                                <li style={{fontSize:"20px"}}>
+                                    Service/Implement 의 추상화 구조로 프로젝트를 구축한 경험이 있습니다.
+                                </li>
+                            </ul>
+                            <br></br>SQL<br></br>
+                            <ul>
+                                <li style={{fontSize:"20px"}}>
+                                    Oracle SQL 기반의 Table 설계, Query문 설계 업무를 수행한 경험이 있습니다.
+                                </li>
+                                <li style={{fontSize:"20px"}}>
+                                    index 를 설정하여 탐색 속도 향상을 구현할 수 있습니다.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style={{display:"flex", paddingTop:"30px", justifyContent:"center", display:"flex"}}>
+                <div style={{paddingBottom:"20px", paddingTop:"55px", paddingRight:"8%",position:"absolute", zIndex:"2"}}>
+                    <div className="papeTag" style={{fontFamily:"ParkYongJun", fontSize:"30px",width:"100%"}}>
+
+                        AI / Computer Vision
+
+                    </div>
+                </div>
+                <div className="sticker" style={{zIndex:"1", left: "0%", transform: "translate(0%, 10%)"}}>
+                    <div class="sticker-content">
+                        <div style={{height:"fit-content"}}>
+                            <br></br>AI / Computer Vision <br></br>
+                            <ul>
+                                <li style={{fontSize:"20px"}}>
+                                    Object Detection, GAN, STN 등 다양한 Network를 학습하고 구현하였습니다.
+                                </li>
+                                <li style={{fontSize:"20px"}}>
+                                    Computer Vision 분야 중 Human Pose Estimation 분야에 대해 연구하고 개발한 경험이 있습니다.
+                                </li>
+                                <li style={{fontSize:"20px"}}>
+                                    고전 영상처리 알고리즘의 동작 원리에 대해 이해하고 구현한 경험이 있습니다.
+                                </li>
+                            </ul>
+                            
+                        </div>
+                    </div>
+                </div> 
+            </div>
+
+            
             
             
             <Divider>기술 스택 - Github</Divider>

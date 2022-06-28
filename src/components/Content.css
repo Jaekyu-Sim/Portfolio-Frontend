@@ -26,7 +26,24 @@ body {
    padding: 5px;
    
   }
-.paper-img {
+
+.papeTag {
+    width: 10%;
+    height: 40px;
+    background: #ffff;
+    box-shadow:
+   /* The top layer shadow */
+   0 1px 1px rgba(0,0,0,0.15),
+   /* The second layer */
+   0 10px 0 -5px #eee,
+   /* The second layer shadow */
+   0 10px 1px -4px rgba(0,0,0,0.15);
+    /* The third layer */
+   z-index: 3;
+   padding: 5px;
+   
+  }
+.paper-header {
     position: absolute;
     width: 50%;
     max-width: 50%;
@@ -42,7 +59,7 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.paper-img:before {
+.paper-header:before {
     content: '';
     position: absolute;
     top: 0; bottom: 0; left: 0;
@@ -53,7 +70,7 @@ body {
     box-sizing: border-box;
 }
 
-.paper-img-content {
+.paper-header-content {
     position: absolute;
     top: 30px; right: 0; bottom: 30px; left: 60px;
     background: linear-gradient(transparent, transparent 28px, #91D1D3 28px);
@@ -101,13 +118,95 @@ body {
     outline: 0;
     background: transparent;
     color: #000000;
-    font-family: 'ParkYongJun', cursive;
+    font-family: 'ParkYongJun';
+    font-weight: bold;
+    font-size: 25px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+.paper-content div {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    line-height: 30px;
+    padding: 0 10px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #000000;
+    font-family: 'ParkYongJun';
     font-weight: bold;
     font-size: 25px;
     box-sizing: border-box;
     z-index: 1;
 }
 
+.sticker {
+    position: relative;
+    width: 30%;
+    max-width: 40%;
+    min-width: 30%;
+    height: 480px;
+    margin: 0 auto;
+    background: #fafafa80;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.3);
+    overflow: hidden;
+}
+.sticker:before {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0; left: 0;
+    width: 60px;
+    background: radial-gradient(#575450 6px, transparent 7px) repeat-y;
+    background-size: 30px 30px;
+    border-right: 3px solid #D44147;
+    box-sizing: border-box;
+}
+
+.sticker-content {
+    position: absolute;
+    top: 30px; right: 0; bottom: 30px; left: 60px;
+    background: linear-gradient(transparent, transparent 28px, #91D1D3 28px);
+    background-size: 30px 30px;
+    word-break: keep-all;
+}
+
+.sticker-content textarea {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    line-height: 30px;
+    padding: 0 10px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #000000;
+    font-family: 'ParkYongJun';
+    font-weight: bold;
+    font-size: 25px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+.sticker-content div {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    line-height: 30px;
+    padding: 0 10px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #000000;
+    font-family: 'ParkYongJun';
+    font-weight: bold;
+    font-size: 25px;
+    box-sizing: border-box;
+    z-index: 1;
+}
 
 footer {
     margin-top: 30px;
