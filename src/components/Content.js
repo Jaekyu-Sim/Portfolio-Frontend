@@ -267,11 +267,14 @@ const Content = () => {
             <div style={{paddingLeft:"5%", paddingBottom:"20px", paddingTop:"50px"}}>
                 <div className="pape" style={{fontFamily:"ParkYongJun", fontSize:"30px"}}>
 
-                    3. Career
+                    3. Projects
 
                 </div>
             </div>
-            <div style={{background:"white"}}>
+            <div className="frame">
+                <img src={githubIcon}></img>
+            </div>
+            <div className="typing-demo" data-aos-easing="ease-in-out" style={{background:"white"}}>
                 Spatial_Transform_Network
                 
             </div>
