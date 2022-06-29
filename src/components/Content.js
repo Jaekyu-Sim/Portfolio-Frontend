@@ -33,6 +33,11 @@ import Chip from '@mui/material/Chip';
 
 import githubResult1 from '../img/githubResult1.png'
 
+import poseEstimationOutput from '../img/PoseEstimationOutput.PNG'
+import handKeypointDetectionOutput from '../img/HandKeypointDetectionOutput.PNG'
+import SKHynixLogo from '../img/SKHynix.jpg'
+import SKCCLogo from '../img/SKCC.png'
+
 import "../components/Content.css"
 
 import AOS from 'aos';
@@ -69,6 +74,12 @@ const Content = () => {
     const [cardLoading, setCardLoading] = useState(false);
     const [browserWidth, setBrowserWidth] = useState(window.innerWidth);
     const [browserHeight, setBrowserHeight] = useState(window.innerHeight);
+    const [project1Content, setProject1Content] = useState("pause");
+    const [project2Content, setProject2Content] = useState("pause");
+    const [project3Content, setProject3Content] = useState("pause");
+    const [project4Content, setProject4Content] = useState("pause");
+    const [project5Content, setProject5Content] = useState("pause");
+    const [project6Content, setProject6Content] = useState("pause");
 
     //func
     const handleBrowserResize = () => {
@@ -86,6 +97,71 @@ const Content = () => {
     console.log('세로 값이 바뀜', window.innerHeight)
     }, [window.innerHeight]);
 
+    const handleBrowserScroll = () => {
+        console.log("스크롤 변화 감지됨", window.scrollY, project1Content);
+        if(window.scrollY < "2300")
+        {
+            console.log("스크롤 pause")
+            setProject1Content("pause");
+        }
+        else{
+            console.log("스크롤 running")
+            setProject1Content("running");
+        }
+
+        if(window.scrollY < "3200")
+        {
+            console.log("스크롤 pause")
+            setProject2Content("pause");
+        }
+        else{
+            console.log("스크롤 running")
+            setProject2Content("running");
+        }
+
+        if(window.scrollY < "3900")
+        {
+            console.log("스크롤 pause")
+            setProject3Content("pause");
+        }
+        else{
+            console.log("스크롤 running")
+            setProject3Content("running");
+        }
+
+        if(window.scrollY < "4600")
+        {
+            console.log("스크롤 pause")
+            setProject4Content("pause");
+        }
+        else{
+            console.log("스크롤 running")
+            setProject4Content("running");
+        }
+
+        if(window.scrollY < "5400")
+        {
+            console.log("스크롤 pause")
+            setProject5Content("pause");
+        }
+        else{
+            console.log("스크롤 running")
+            setProject5Content("running");
+        }
+
+        if(window.scrollY < "6100")
+        {
+            console.log("스크롤 pause")
+            setProject6Content("pause");
+        }
+        else{
+            console.log("스크롤 running")
+            setProject6Content("running");
+        }
+        
+        
+    }
+
     useEffect(() => {
         window.addEventListener("resize", handleBrowserResize);
         return () => {
@@ -93,8 +169,16 @@ const Content = () => {
         }
     }, []);
 
+    useEffect(() => {
+        window.addEventListener("scroll", handleBrowserScroll);
+        return () => {
+            window.removeEventListener("scroll", handleBrowserScroll);
+        }
+    }, []);
+
+
     return (
-        <>
+        <div style={{width:"100%"}}>
         <div style={{background:"#91D1D3", position: "relative",  height: "100%", width:browserWidth, minHeight:"50px", flex:"1"}}>
             <div style={{paddingLeft:"5%", paddingBottom:"20px"}}>
                 <div className="pape" style={{fontFamily:"ParkYongJun", fontSize:"30px"}}>
@@ -181,7 +265,10 @@ const Content = () => {
                                     Redux, Saga 패턴을 적용한 상태관리 라이브러리를 사용한 경험이 있습니다.
                                 </li>
                                 <li style={{fontSize:"20px"}}>
-                                    Antd, Ag-grid, MUI 등의 라이브러리를 사용하여 시스템 개발을 한 경험이 있습니다.
+                                    Antd, Ag-grid, MUI 등의 라이브러리를 사용하여 기업 시스템 개발을 한 경험이 있습니다.
+                                </li>
+                                <li style={{fontSize:"20px"}}>
+                                    Socket 통신 기반의 React Chatting 프로그램을 구현해본 경험이 있습니다.
                                 </li>
                                 <li style={{fontSize:"20px"}}>
                                     실시간 가상 반도체장비 모니터링 시스템 UI 구축 경험이 있습니다.
@@ -246,16 +333,23 @@ const Content = () => {
                 <div className="sticker" style={{zIndex:"1", left: "0%", transform: "translate(0%, 10%)"}}>
                     <div class="sticker-content">
                         <div style={{height:"fit-content"}}>
-                            <br></br>AI / Computer Vision <br></br>
+                            <br></br>AI <br></br>
                             <ul>
                                 <li style={{fontSize:"20px"}}>
                                     Object Detection, GAN, STN 등 다양한 Network를 학습하고 구현하였습니다.
                                 </li>
                                 <li style={{fontSize:"20px"}}>
+                                    구현한 Network의 한계점을 찾고, 이를 개선하는 활동을 해왔습니다.
+                                </li>
+                                
+                            </ul>
+                            <br></br>Computer Vision <br></br>
+                            <ul>
+                                <li style={{fontSize:"20px"}}>
                                     Computer Vision 분야 중 Human Pose Estimation 분야에 대해 연구하고 개발한 경험이 있습니다.
                                 </li>
                                 <li style={{fontSize:"20px"}}>
-                                    고전 영상처리 알고리즘의 동작 원리에 대해 이해하고 구현한 경험이 있습니다.
+                                    Edge detection, Optical Flow 등 고전 영상처리 알고리즘의 동작 원리에 대해 이해하고 구현한 경험이 있습니다.
                                 </li>
                             </ul>
                             
@@ -264,331 +358,317 @@ const Content = () => {
                 </div> 
             </div>
 
-            <div style={{paddingLeft:"5%", paddingBottom:"20px", paddingTop:"50px"}}>
+            <div style={{paddingLeft:"5%", paddingBottom:"0px", paddingTop:"100px"}}>
                 <div className="pape" style={{fontFamily:"ParkYongJun", fontSize:"30px"}}>
 
                     3. Projects
 
                 </div>
             </div>
-            <div className="frame">
-                <img src={githubIcon}></img>
+            <div style={{alignItems:"center", display:"flex", justifyContent:"center"}}>
+                <div className="frame" style={{width:"30%"}}>
+                    <img style={{width:"100%"}} src={poseEstimationOutput}></img>
+                </div>
+
+
+                <div className="projectPaper">
+                    <div class="projectPaper-content">
+                        <div style={{height:"fit-content"}}>
+                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project1Content}}>
+                                * 프로젝트명<br></br>
+                                 - 가려짐이 있는 신체의 키포인트 검출 (18.03 ~ 19.02)
+                            </div>
+                            <br></br>
+                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project1Content}}>
+                                * 프로젝트 수행 인원<br></br>
+                                 - 1명
+                            </div>
+                            <br></br>
+                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project1Content}}>
+                                * 회사명<br></br>
+                                 - 로보메이션(산학과제)
+                            </div>
+                            <br></br>
+                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project1Content}}>
+                                * 주요 기술<br></br>
+                                 - Tensorflow, Python, Computer Vision
+                            </div>
+                            <br></br>
+                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project1Content}}>
+                                * 내용<br></br>
+                                <ul>
+                                    <li>
+                                        Pose Estimation 분야 SOTA 논문(Open Pose) 학습
+                                    </li>
+                                    <li >
+                                        Base Line Network 구현 및 및 한계점 확인
+                                    </li>
+                                    <li>
+                                        Recurrent 구조 Network 고안 및 적용, 개발
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className="typing-demo" data-aos-easing="ease-in-out" style={{background:"white"}}>
-                Spatial_Transform_Network
+
+
+
+            <div style={{alignItems:"center", display:"flex", justifyContent:"center"}}>
+                
+
+
+                <div className="projectPaper">
+                    <div class="projectPaper-content">
+                        <div style={{height:"fit-content"}}>
+                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project2Content}}>
+                                * 프로젝트명<br></br>
+                                 - 가려짐이 있는 손 이미지의 키포인트 검출 (19.03 ~ 20.02)
+                            </div>
+                            <br></br>
+                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project2Content}}>
+                                * 프로젝트 수행 인원<br></br>
+                                 - 1명
+                            </div>
+                            <br></br>
+                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project2Content}}>
+                                * 회사명<br></br>
+                                 - 로보메이션(산학과제)
+                            </div>
+                            <br></br>
+                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project2Content}}>
+                                * 주요 기술<br></br>
+                                 - Tensorflow, Python, Computer Vision
+                            </div>
+                            <br></br>
+                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project2Content}}>
+                                * 내용<br></br>
+                                <ul>
+                                    <li>
+                                        Hand Keypoint Detection 분야 SOTA 논문 학습
+                                    </li>
+                                    <li >
+                                        Base Line Network 구현 및 기존 Hand Keypoint Detection 한계점 확인
+                                    </li>
+                                    <li>
+                                        Hand Image Cropping 방식 개선 및 Recurrnt구조  Network 고안 및 적용
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="frame" style={{width:"30%"}}>
+                    <img style={{width:"100%"}} src={handKeypointDetectionOutput}></img>
+                </div>
+            </div>
+
+
+            <div style={{alignItems:"center", display:"flex", justifyContent:"center"}}>
+                
+                <div className="frame" style={{width:"30%"}}>
+                    <img style={{width:"100%"}} src={SKHynixLogo}></img>
+                </div>
+
+
+                <div className="projectPaper">
+                    <div class="projectPaper-content">
+                        <div style={{height:"fit-content"}}>
+                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project3Content}}>
+                                * 프로젝트명<br></br>
+                                 - SK Hynix M16 생산정보시스템 smartMCC 구축 (20.04 ~ 21.02)
+                            </div>
+                            <br></br>
+                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project3Content}}>
+                                * 프로젝트 수행 인원<br></br>
+                                 - 2명
+                            </div>
+                            <br></br>
+                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project3Content}}>
+                                * 회사명<br></br>
+                                 - SK Hynix
+                            </div>
+                            <br></br>
+                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project3Content}}>
+                                * 주요 기술<br></br>
+                                 - C#, Java, Oracle SQL
+                            </div>
+                            <br></br>
+                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project3Content}}>
+                                * 내용<br></br>
+                                <ul>
+                                    <li>
+                                        SK Hynix 신규 Fab 증설에 따른 Legacy 시스템 횡전개
+                                    </li>
+                                    <li >
+                                        smartMCC 시스템 기능 고도화
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+
+            <div style={{alignItems:"center", display:"flex", justifyContent:"center"}}>
+                <div className="projectPaper">
+                    <div class="projectPaper-content">
+                        <div style={{height:"fit-content"}}>
+                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project4Content}}>
+                                * 프로젝트명<br></br>
+                                 - SK Hynix R4 CPS 가상장비시스템 구축 (21.03 ~ 22.02)
+                            </div>
+                            <br></br>
+                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project4Content}}>
+                                * 프로젝트 수행 인원<br></br>
+                                 - 3명
+                            </div>
+                            <br></br>
+                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project4Content}}>
+                                * 회사명<br></br>
+                                 - SK Hynix
+                            </div>
+                            <br></br>
+                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project4Content}}>
+                                * 주요 기술<br></br>
+                                 - React, Javascript, Springboot, Java, Oracle SQL
+                            </div>
+                            <br></br>
+                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project4Content}}>
+                                * 내용<br></br>
+                                <ul>
+                                    <li>
+                                        React 기반의 SK Hynix 가상장비 시스템 UI 컴포넌트 개발
+                                    </li>
+                                    <li >
+                                        Spingboot 기반의 가상장비 시스템 API 개발
+                                    </li>
+                                    <li >
+                                        DB Table 설계 및 Query문 작성
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="frame" style={{width:"30%"}}>
+                    <img style={{width:"100%"}} src={SKHynixLogo}></img>
+                </div>
+                
+            </div>
+
+            <div style={{alignItems:"center", display:"flex", justifyContent:"center"}}>
+                <div className="frame" style={{width:"30%"}}>
+                    <img style={{width:"100%"}} src={SKCCLogo}></img>
+                </div>
+                <div className="projectPaper">
+                    <div class="projectPaper-content">
+                        <div style={{height:"fit-content"}}>
+                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project5Content}}>
+                                * 프로젝트명<br></br>
+                                 - SK C&C Log Anomaly Detection (21.12 ~ 22.02)
+                            </div>
+                            <br></br>
+                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project5Content}}>
+                                * 프로젝트 수행 인원<br></br>
+                                 - 1명
+                            </div>
+                            <br></br>
+                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project5Content}}>
+                                * 회사명<br></br>
+                                 - SK C&C
+                            </div>
+                            <br></br>
+                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project5Content}}>
+                                * 주요 기술<br></br>
+                                 - Python, Tensorflow
+                            </div>
+                            <br></br>
+                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project5Content}}>
+                                * 내용<br></br>
+                                <ul>
+                                    <li>
+                                        팀 내 Log Anomaly Detection PoC 업무 수행
+                                    </li>
+                                    <li >
+                                        System Log Anomaly Detection 분야 Research 수행
+                                    </li>
+                                    <li >
+                                        DeepLog(Log Anomaly Detection 분야 SOTA) Paper 리뷰 및 구현 결과 발표(to 파트)
+                                    </li>
+                                    <li >
+                                        SK Hynix 내 Legacy 시스템 Log로 학습 및 결과 발표
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+
+            <div style={{alignItems:"center", display:"flex", justifyContent:"center"}}>
+                
+                <div className="projectPaper">
+                    <div class="projectPaper-content">
+                        <div style={{height:"fit-content"}}>
+                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project6Content}}>
+                                * 프로젝트명<br></br>
+                                 - SK Hynix CPS 기능 고도화 (22.03 ~ 현재)
+                            </div>
+                            <br></br>
+                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project6Content}}>
+                                * 프로젝트 수행 인원<br></br>
+                                 - 1명
+                            </div>
+                            <br></br>
+                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project6Content}}>
+                                * 회사명<br></br>
+                                 - SK Hynix
+                            </div>
+                            <br></br>
+                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project6Content}}>
+                                * 주요 기술<br></br>
+                                 - React, Javascript, Springboot, Java, JUnit5, Oracle SQL
+                            </div>
+                            <br></br>
+                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project6Content}}>
+                                * 내용<br></br>
+                                <ul>
+                                    <li>
+                                        React 기반의 SK Hynix 가상장비 시스템 UI 컴포넌트 추가 개발
+                                    </li>
+                                    <li >
+                                        Javascript 를 이용한 가상장비 XML 형태 로그파일 Parsing Modal 개발
+                                    </li>
+                                    <li >
+                                        가상장비 Recovery 기능 구현
+                                    </li>
+                                    <li >
+                                        가상장비 Backend 서버 API 개발 및 TDD 적용(JUnit5)
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="frame" style={{width:"30%"}}>
+                    <img style={{width:"100%"}} src={SKHynixLogo}></img>
+                </div>
+                
                 
             </div>
             
             
-            <Divider>기술 스택 - Github</Divider>
-
-            <Row style={{alignItems:"center", display:"flex", justifyContent:"center"}}>
-                <img style={{height:"500px", alignItems:"center", justifyContent:"center", display:"flex"}} src={SubPageImg1}></img>
-            </Row>
-            <Row>
-                <Col span={4}></Col>
-                <Col span={16}>
-                <Typography.Title style={{paddingLeft:"10px"}}>
-                    Frontend - Study
-                </Typography.Title>
-                </Col>
-                <Col span={4}></Col>
-            </Row>
-            <Row gutter={16}>
-                <Col span={4}>
-                </Col>
-                <Col span={8}>
-                    <img style={{width:"100%"}} src={githubResult1}></img>
-                </Col>
-                <Col span={8}>
-                    <Typography.Title level={3}>
-                        React기반 채팅 프로그램
-                    </Typography.Title>    
-                    <Typography.Paragraph>
-                        <ul>
-                            <li>
-                                <Typography.Text >Socket 통신 기반의 React Chat 프로그램 제작</Typography.Text>
-                            </li>
-                            <li>
-                                <Typography.Text >사용자 ID 설정 페이지에서 입력된 값을 Redux Store를 통하여 관리</Typography.Text>
-                            </li>
-                            <li>
-                                <Typography.Text >Antd 라이브러리를 사용한 UI Component 적용</Typography.Text>
-                            </li>
-                            <li>
-                                <Typography.Text >Router(v6)를 적용하여 Component 라우팅</Typography.Text>
-                            </li>
-                        </ul>
-                    </Typography.Paragraph>
-                </Col>
-                <Col span={4}></Col>
-                {/* <Col span={8}></Col>
-                <Col span={4}>
-                    <Card sx={{ maxWidth: 345 }}>
-                        <CardMedia
-                            component="img"
-                            width="10%"
-                            image={githubIcon}
-                            alt="github"
-                        />
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                                React Chat Program
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                            리액트 기반의 소켓 채팅프로그램
-                            </Typography>
-                        </CardContent>
-                        <CardActions>
-                            <ButtonMui size="small" onClick={() => window.open("https://github.com/Jaekyu-Sim/reactMessenger", '_blank')} >React Chat Explore</ButtonMui>
-                        </CardActions>
-                    </Card>
-                </Col>
-                <Col span={4}>
-                    <Card sx={{ maxWidth: 345 }}>
-                        <CardMedia
-                            component="img"
-                            width="10%"
-                            image={githubIcon}
-                            alt="github"
-                        />
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                                React 포트폴리오 페이지
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                            리액트 기반의 포트폴리오 페이지
-                            </Typography>
-                        </CardContent>
-                        <CardActions>
-                            <ButtonMui size="small" onClick={() => window.open("https://github.com/Jaekyu-Sim/Portfolio-Frontend", '_blank')} >Portfolio Explore</ButtonMui>
-                        </CardActions>
-                    </Card>
-                </Col>
-                <Col span={8}></Col> */}
-            </Row>
-
-            <br/>
-            <br/>
-            <br/>
-
-            <Row style={{alignItems:"center", display:"flex", justifyContent:"center"}}>
-                <img style={{height:"500px", alignItems:"center", justifyContent:"center", display:"flex"}} src={SubPageImg2}></img>
-            </Row>
-
-            <Row gutter={16}>
-                <Col span={8}></Col>
-                <Col span={4}>
-                    <Card sx={{ maxWidth: 345 }}>
-                        <CardMedia
-                            component="img"
-                            width="10%"
-                            image={githubIcon}
-                            alt="github"
-                        />
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                                MSA 구조 프로그래밍
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                Springboot 기반의 MSA 구조 프로그램 구축 연습
-                            </Typography>
-                        </CardContent>
-                        <CardActions>
-                            <ButtonMui size="small" onClick={() => window.open("https://github.com/Jaekyu-Sim/order", '_blank')} >Order Explore</ButtonMui>
-                            <ButtonMui size="small" onClick={() => window.open("https://github.com/Jaekyu-Sim/delivery", '_blank')} >Delivery Explore</ButtonMui>
-                            <ButtonMui size="small" onClick={() => window.open("https://github.com/Jaekyu-Sim/view", '_blank')} >View Explore</ButtonMui>
-                            <ButtonMui size="small" onClick={() => window.open("https://github.com/Jaekyu-Sim/gateway", '_blank')} >Gateway Explore</ButtonMui>
-                        </CardActions>
-                    </Card>
-                </Col>
-                <Col span={4}>
-                    <Card sx={{ maxWidth: 345 }}>
-                        <CardMedia
-                            component="img"
-                            width="10%"
-                            image={githubIcon}
-                            alt="github"
-                        />
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                                SpringSecurity JWT 구현
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                SpringSecurity를 이용한 Springboot 기반의 JWT Token 발급 구현 연습<br/><br/>
-                            </Typography>
-                        </CardContent>
-                        <CardActions>
-                            <ButtonMui size="small" onClick={() => window.open("https://github.com/Jaekyu-Sim/JWT_Example", '_blank')} >JWT Explore</ButtonMui>
-                        </CardActions>
-                    </Card>
-                </Col>
-                <Col span={8}></Col>
-            </Row>
-
-            <br/>
-            <br/>
-
-            <Row style={{alignItems:"center", display:"flex", justifyContent:"center"}}>
-                <img style={{height:"500px", alignItems:"center", justifyContent:"center", display:"flex"}} src={SubPageImg3}></img>
-            </Row>
-
-            <Row gutter={16}>
-            <Col span={6}></Col>
-                <Col span={4}>
-                    <Card sx={{ maxWidth: 345 }}>
-                        <CardMedia
-                            component="img"
-                            width="10%"
-                            image={githubIcon}
-                            alt="github"
-                        />
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                                Super Resolution GUI Program
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                PyQT 를 이용하여 Super Resolution Network 구현 후 GUI 프로그램으로 구현
-                            </Typography>
-                        </CardContent>
-                        <CardActions>
-                            <ButtonMui size="small" onClick={() => window.open("https://github.com/Jaekyu-Sim/Super-Resolution_GUI", '_blank')} >SuperResolution Explore</ButtonMui>
-                        </CardActions>
-                    </Card>
-                </Col>
-                <Col span={4}>
-                    <Card sx={{ maxWidth: 345 }}>
-                        <CardMedia
-                            component="img"
-                            width="10%"
-                            image={githubIcon}
-                            alt="github"
-                        />
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                                DCGAN Network 구현
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                DCGAN Paper 학습 후 Network 구현<br/><br/>
-                            </Typography>
-                        </CardContent>
-                        <CardActions>
-                            <ButtonMui size="small" onClick={() => window.open("https://github.com/Jaekyu-Sim/DCGAN-Deep-Convolution-Generative-Adverserial-Networks-", '_blank')} >DCGAN Explore</ButtonMui>
-                        </CardActions>
-                    </Card>
-                </Col>
-
-                <Col span={4}>
-                    <Card sx={{ maxWidth: 345 }}>
-                        <CardMedia
-                            component="img"
-                            width="10%"
-                            image={githubIcon}
-                            alt="github"
-                        />
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                                Pose Estimation Network 구현
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                Open Pose Paper 학습 후 Network 구현<br/><br/>
-                            </Typography>
-                        </CardContent>
-                        <CardActions>
-                            <ButtonMui size="small" onClick={() => window.open("https://github.com/Jaekyu-Sim/Open_Pose_Original_Network", '_blank')} >OpenPose Explore</ButtonMui>
-                        </CardActions>
-                    </Card>
-                </Col>
-
-                <Col span={6}></Col>
-            </Row>
-            <Row gutter={16}>
-                <Col span={6}></Col>
-            <Col span={4}>
-                    <Card sx={{ maxWidth: 345 }}>
-                        <CardMedia
-                            component="img"
-                            width="10%"
-                            image={githubIcon}
-                            alt="github"
-                        />
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                                STN 구현
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                Spatial Transform Network Paper 학습 후 Network 구현
-                            </Typography>
-                        </CardContent>
-                        <CardActions>
-                            <ButtonMui size="small" onClick={() => window.open("https://github.com/Jaekyu-Sim/Spatial_Transform_Network", '_blank')} >STN Explore</ButtonMui>
-                        </CardActions>
-                    </Card>
-                </Col>
-                <Col span={4}>
-                    <Card sx={{ maxWidth: 345 }}>
-                        <CardMedia
-                            component="img"
-                            width="10%"
-                            image={githubIcon}
-                            alt="github"
-                        />
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                                STN Hand Detection 구현
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                STN을 이용한 Hand Detection 연구 및 Network 구현
-                            </Typography>
-                        </CardContent>
-                        <CardActions>
-                            <ButtonMui size="small" onClick={() => window.open("https://github.com/Jaekyu-Sim/STN_Hand_Detection", '_blank')} >STN Hand Detection Explore</ButtonMui>
-                        </CardActions>
-                    </Card>
-                </Col>
-                <Col span={4}>
-                    <Card sx={{ maxWidth: 345 }}>
-                        <CardMedia
-                            component="img"
-                            width="10%"
-                            image={githubIcon}
-                            alt="github"
-                        />
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                                DeepLog 구현
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                DeepLog Paper 학습 후 Network 구현<br/><br/>
-                            </Typography>
-                        </CardContent>
-                        <CardActions>
-                            <ButtonMui size="small" onClick={() => window.open("https://github.com/Jaekyu-Sim/DeepLog", '_blank')} >DeepLog Explore</ButtonMui>
-                        </CardActions>
-                    </Card>
-                </Col>
-                <Col span={6}></Col>
-            </Row>
-
-            <Card title = "프로젝트">
-
-            <p>
-                사용자 모션 인식 로보메이션
-
-                SK Hynix M16
-
-                SK Hynix R3
-
-                SK Hynix M15
-            </p>
-            </Card>
-
             
-            
-
-
         </div>
-        </>
+        </div>
     )
 }
 
