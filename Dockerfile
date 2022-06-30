@@ -1,5 +1,5 @@
 # ngix 설치
-FROM ngix
+FROM nginx
 
 # 프로젝트가 들어갈 폴더 생성
 RUN mkdir /app
