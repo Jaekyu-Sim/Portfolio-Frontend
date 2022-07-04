@@ -101,61 +101,61 @@ const ContentMobile = () => {
         console.log("스크롤 변화 감지됨", window.scrollY, project1Content);
         if(window.scrollY < "2300")
         {
-            console.log("스크롤 pause")
+            //console.log("스크롤 pause")
             setProject1Content("pause");
         }
         else{
-            console.log("스크롤 running")
+            //console.log("스크롤 running")
             setProject1Content("running");
         }
 
         if(window.scrollY < "3200")
         {
-            console.log("스크롤 pause")
+            //console.log("스크롤 pause")
             setProject2Content("pause");
         }
         else{
-            console.log("스크롤 running")
+            //console.log("스크롤 running")
             setProject2Content("running");
         }
 
         if(window.scrollY < "3900")
         {
-            console.log("스크롤 pause")
+            //console.log("스크롤 pause")
             setProject3Content("pause");
         }
         else{
-            console.log("스크롤 running")
+            //console.log("스크롤 running")
             setProject3Content("running");
         }
 
         if(window.scrollY < "4600")
         {
-            console.log("스크롤 pause")
+            //console.log("스크롤 pause")
             setProject4Content("pause");
         }
         else{
-            console.log("스크롤 running")
+            //console.log("스크롤 running")
             setProject4Content("running");
         }
 
         if(window.scrollY < "5400")
         {
-            console.log("스크롤 pause")
+            //console.log("스크롤 pause")
             setProject5Content("pause");
         }
         else{
-            console.log("스크롤 running")
+            //console.log("스크롤 running")
             setProject5Content("running");
         }
 
         if(window.scrollY < "6100")
         {
-            console.log("스크롤 pause")
+            //console.log("스크롤 pause")
             setProject6Content("pause");
         }
         else{
-            console.log("스크롤 running")
+            //console.log("스크롤 running")
             setProject6Content("running");
         }
         
