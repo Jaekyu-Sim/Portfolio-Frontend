@@ -59,11 +59,7 @@ const HeaderMobile = () => {
     return (
         <div style={{width:browserWidth, height:browserHeight, background:"#91D1D3"}}>
                 <div style={{fontFamily:"ParkYongJun", fontSize:"12vw", position: "relative", zIndex:"3", transform:`translateX(${scrollPosition}px)`, float:"left"}}>
-                    안녕하세요
-                </div>
-
-                <div style={{fontFamily:"ParkYongJun", fontSize:"12vw", position: "relative", zIndex:"2", transform:`translateX(-${scrollPosition}px)`, float:"right"}}>
-                    심재규 입니다
+                    안녕하세요 심재규 입니다
                 </div>
 
                 <div className="paper-header" >
