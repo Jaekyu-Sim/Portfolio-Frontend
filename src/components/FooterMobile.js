@@ -19,8 +19,15 @@ position: fixed;
 
 const FooterMobile = () => {
 
-    const [mobileBrowserWidth, setMobilebrowserWidth] = useState("100%");
-    const [mobileBrowserHeight, setMobilebrowserHeight] = useState("100%");
+    // const [mobileBrowserWidth, setMobilebrowserWidth] = useState("100%");
+    // const [mobileBrowserHeight, setMobilebrowserHeight] = useState("100%");
+
+    // useEffect(() => {
+    //     window.addEventListener("resize", handleBrowserResize);
+    //     return () => {
+    //         window.removeEventListener("resize", handleBrowserResize);
+    //     }
+    // }, []);
     return (
         <>
         <div style={{alignItem:"center", display:"flex", justifyContent:"right", position: "relative", bottom: 0, height: "100%", width : "100%", backgroundColor:"#DDDDDD", minHeight:"50px", padding:"10px"}}>

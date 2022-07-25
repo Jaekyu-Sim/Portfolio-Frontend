@@ -650,7 +650,7 @@ const Content = () => {
                                         가상장비 Recovery 기능 구현
                                     </li>
                                     <li >
-                                        가상장비 Backend 서버 API 개발 및 TDD 적용(JUnit5)
+                                        가상장비 Backend 서버 API 개발 및 TDD 적용(JUnit4)
                                     </li>
                                 </ul>
                             </div>
